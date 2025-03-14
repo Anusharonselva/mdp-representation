@@ -20,23 +20,33 @@ IV  ->>  Floor 4 (Top Floor)
 
 
 ### Action Space
-Write your answer here
-
+The elevator can move up or down one floor at a time, pick up the passenger if it's at the waiting floor, or drop the passenger off if it's at the destination floor.
 ### Sample Action
-Write your answer here
 
 ### Reward Function
-Write your answer here
-
-### Graphical Representation
-Write your answer here
+10 points for picking up a passenger.
+20 points for dropping off a passenger at the correct floor.
+Negative Reward:
+-5 points for unnecessary movement (e.g., moving when not needed).
+-1 point for invalid actions.
 
 ## PYTHON REPRESENTATION:
-Write your code here
+Elevator Position: 2, Passenger Waiting: 5, Destination: 4, Passenger In Elevator: False, Reward: -1
+Elevator Position: 2, Passenger Waiting: 5, Destination: 4, Passenger In Elevator: False, Reward: -1
+Elevator Position: 3, Passenger Waiting: 5, Destination: 4, Passenger In Elevator: False, Reward: -1
+Elevator Position: 4, Passenger Waiting: 5, Destination: 4, Passenger In Elevator: False, Reward: -1
+Elevator Position: 5, Passenger Waiting: 5, Destination: 4, Passenger In Elevator: False, Reward: 10
+Elevator Position: 5, Passenger Waiting: 5, Destination: 4, Passenger In Elevator: True, Reward: -1
+Elevator Position: 4, Passenger Waiting: 5, Destination: 4, Passenger In Elevator: True, Reward: -1
+Elevator Position: 3, Passenger Waiting: 5, Destination: 4, Passenger In Elevator: True, Reward: -1
+Elevator Position: 2, Passenger Waiting: 5, Destination: 4, Passenger In Elevator: True, Reward: 20
+Passenger successfully delivered!
 
 ## OUTPUT:
 Write your Python output here
+![Screenshot 2025-03-14 143139](https://github.com/user-attachments/assets/875afdc7-726f-4444-92da-4fb96e26d759)
 
 ## RESULT:
-Write your output here
+Thus the given real world problem is successfully represented in a MDP form .
+
 
