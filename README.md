@@ -31,20 +31,31 @@ Negative Reward:
 -1 point for invalid actions.
 
 ## PYTHON REPRESENTATION:
-Elevator Position: 2, Passenger Waiting: 5, Destination: 4, Passenger In Elevator: False, Reward: -1
-Elevator Position: 2, Passenger Waiting: 5, Destination: 4, Passenger In Elevator: False, Reward: -1
-Elevator Position: 3, Passenger Waiting: 5, Destination: 4, Passenger In Elevator: False, Reward: -1
-Elevator Position: 4, Passenger Waiting: 5, Destination: 4, Passenger In Elevator: False, Reward: -1
-Elevator Position: 5, Passenger Waiting: 5, Destination: 4, Passenger In Elevator: False, Reward: 10
-Elevator Position: 5, Passenger Waiting: 5, Destination: 4, Passenger In Elevator: True, Reward: -1
-Elevator Position: 4, Passenger Waiting: 5, Destination: 4, Passenger In Elevator: True, Reward: -1
-Elevator Position: 3, Passenger Waiting: 5, Destination: 4, Passenger In Elevator: True, Reward: -1
-Elevator Position: 2, Passenger Waiting: 5, Destination: 4, Passenger In Elevator: True, Reward: 20
-Passenger successfully delivered!
+```
+pip install pandas
+
+import pandas as pd
+
+mdp_transitions = [
+    {'Current State': (1, 0), 'Action': 'UP',       'Next State': (2, 0), 'Probability': 1.0, 'Reward': 0,  'Done': False},
+    {'Current State': (1, 0), 'Action': 'PICK_UP',  'Next State': (1, 1), 'Probability': 1.0, 'Reward': 10, 'Done': False},
+    {'Current State': (2, 0), 'Action': 'UP',       'Next State': (3, 0), 'Probability': 1.0, 'Reward': 0,  'Done': False},
+    {'Current State': (2, 0), 'Action': 'DOWN',     'Next State': (1, 0), 'Probability': 1.0, 'Reward': 0,  'Done': False},
+    {'Current State': (2, 0), 'Action': 'PICK_UP',  'Next State': (2, 1), 'Probability': 1.0, 'Reward': 10, 'Done': False},
+    {'Current State': (2, 1), 'Action': 'UP',       'Next State': (3, 1), 'Probability': 1.0, 'Reward': 0,  'Done': False},
+    {'Current State': (2, 1), 'Action': 'DOWN',     'Next State': (1, 1), 'Probability': 1.0, 'Reward': 0,  'Done': False},
+    {'Current State': (2, 1), 'Action': 'DROP_OFF', 'Next State': (2, 0), 'Probability': 1.0, 'Reward': 20, 'Done': False},
+    {'Current State': (3, 1), 'Action': 'DROP_OFF', 'Next State': (3, 0), 'Probability': 1.0, 'Reward': 20, 'Done': False},
+]
+
+df = pd.DataFrame(mdp_transitions)
+
+print(df)
+
+```
 
 ## OUTPUT:
-Write your Python output here
-![Screenshot 2025-03-14 143139](https://github.com/user-attachments/assets/875afdc7-726f-4444-92da-4fb96e26d759)
+![image](https://github.com/user-attachments/assets/e83a4af5-675d-4f14-bfc7-63359fe9abe3)
 
 ## RESULT:
 Thus the given real world problem is successfully represented in a MDP form .
